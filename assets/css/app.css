@@ -1,0 +1,241 @@
+:root {
+  --color-textos: #3b412f;
+}
+
+@font-face {
+  font-family: 'Amour'; /* Choose a name for your font */
+  src: url('../fonts/Amour.ttf') format('truetype'); /* Specify the path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BellotaText'; /* Choose a name for your font */
+  src: url('../fonts/BellotaText-Regular.ttf') format('truetype'); /* Specify the path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BellotaTextLight'; /* Choose a name for your font */
+  src: url('../fonts/BellotaText-Light.ttf') format('truetype'); /* Specify the path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Imperial'; /* Choose a name for your font */
+  src: url('../fonts/ImperialScript-Regular.ttf') format('truetype'); /* Specify the path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alegreya'; /* Choose a name for your font */
+  src: url('../fonts/AlegreyaSC-Regular.ttf') format('truetype'); /* Specify the path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.titulo {
+    font-family: 'Amour', Georgia, serif;
+    font-size: 240px;
+    color: white;
+}
+
+.subtitulo {
+    font-family: 'BellotaText', Georgia, serif;
+    font-size: 36px;
+    color: white;
+    position: inherit;
+    top: -126px;
+    right: 86px;
+}
+
+.bordado-izquierdo {
+    height: 100vh;
+    width: 30px;
+    left: 0;
+    top: 0;
+    background: url('../images/bordado-izq.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+
+.bordado-derecho {
+    height: 100vh;
+    width: 30px;
+    right: 0;
+    top: 0;
+    background: url('../images/bordado-der.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+
+
+.contenedor-seccion1 {
+    height: min(50vw, 800px);
+}
+
+.card1 {
+    position: absolute;
+    width: 90%;
+    top: 100px;
+    right: -70px;
+}
+
+.card1back {
+    position: absolute;
+    width: 90%;
+    top: 150px;
+    left: -70px;
+}
+
+.card1flores {
+    position: absolute;
+    width: 30%;
+    top: 0;
+    right: 2px;
+    z-index: 1;
+}
+
+.seccion2 .sobre {
+    width: 400px;
+    object-fit: contain;
+    margin-top: 60px;
+    margin-bottom: 200px;
+    z-index: 1;
+}
+.seccion2 .disco {
+    position: absolute;
+    width: 350px;
+    left: calc(50% + 100px);
+    bottom: 40px;
+    z-index: 2;
+}
+
+.seccion2 .fondoextra {
+    position: absolute;
+    width: 350px;
+    left: calc(50% + 70px);
+    top: 170px;
+}
+
+.seccion2 .fondoflores {
+    position: absolute;
+    width: 350px;
+    right: calc(50% + 170px);
+    top: 320px;
+}
+
+.seccion2 .vestimenta {
+    position: absolute;
+    right: calc(50% + 164px);
+    top: 272px;
+    height: 140px;
+    z-index: 3;
+    width: 256px;
+}
+.seccion2 .vestimenta .titulo {
+    font-family: 'Imperial', Georgia, serif;
+    font-size: 52px;
+    color: var(--color-textos);
+    margin-top: 10px;
+}
+.seccion2 .vestimenta .texto {
+    font-family: 'BellotaText', Georgia, serif;
+    font-size: 16px;
+    color: var(--color-textos);
+    line-height: 18px;
+    margin-top: -12px;
+}
+
+.seccion2 .musica {
+    position: absolute;
+    width: 290px;
+    left: calc(50% + 252px);
+    top: 200px;
+    height: 210px;
+    z-index: 3;
+}
+.seccion2 .musica .titulo {
+    font-family: 'Imperial', Georgia, serif;
+    font-size: 52px;
+    color: var(--color-textos);
+}
+.seccion2 .musica .texto {
+    font-family: 'BellotaText', Georgia, serif;
+    font-size: 16px;
+    color: var(--color-textos);
+    line-height: 18px;
+    margin-top: -12px;
+}
+.seccion2 .musica .boton {
+    width: 182px;
+    margin: 12px 0 0 52px;
+}
+
+.seccion2 .detalles {
+    position: absolute;
+    width: 320px;
+    right: calc(50% + 10px);
+    top: 470px;
+    height: 216px;
+    z-index: 3;
+}
+.seccion2 .detalles .titulo {
+    font-family: 'Imperial', Georgia, serif;
+    font-size: 52px;
+    color: var(--color-textos);
+    margin-top: 14px;
+}
+.seccion2 .detalles .texto {
+    font-family: 'BellotaText', Georgia, serif;
+    font-size: 16px;
+    color: var(--color-textos);
+    line-height: 18px;
+    margin-top: -12px;
+}
+.seccion2 .detalles .boton {
+    width: 164px;
+    margin: 18px 0 0 80px;
+}
+
+
+.seccion4 .titulo {
+    font-family: 'Amour', Georgia, serif;
+    font-size: 82px;
+    color: var(--color-textos);
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.seccion4 .contenedor {
+    width: 700px;
+    margin: auto;
+}
+
+.seccion4 .valores {
+    position: inherit;
+    top: -308px;
+    left: 12px;
+}
+
+.seccion4 .valores * {
+    font-family: 'Alegreya', Georgia, serif;
+    font-size: 94px;
+    color: #808175;
+}
+
+.seccion4 .valores span {
+    padding-left: 28px;
+}
+
+.seccion4 .logo {
+    width: 140px;
+    margin: auto;
+    /* margin-top: 130px; */
+    margin-bottom: 30px;
+}
