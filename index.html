@@ -54,6 +54,11 @@
 
     <!-- Application styles -->
     <link rel="stylesheet" href="assets/css/app.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 <body>
 
@@ -62,8 +67,8 @@
         <div class="flex h-screen">
             <div class="flex-1 place-content-center">
                 <div class="text-right">
-                    <div class="titulo relative">Jazmín
-                        <div class="subtitulo">🞗 MIS XV AÑOS 🞗</div>
+                    <div class="titulo relative" data-aos="fade-right" data-aos-duration="1500">Jazmín
+                        <div class="subtitulo" data-aos="fade-right" data-aos-duration="2000">🞗 MIS XV AÑOS 🞗</div>
                     </div>
                 </div>
             </div>
@@ -73,50 +78,49 @@
         <div class="absolute bordado-derecho"></div>
         <div class="absolute bordado-izquierdo"></div>
 
-
-
-        <!-- <div class="relative bg-[url(assets/images/fondo1.png)] bg-cover bg-no-repeat w-screen h-screen">
-            
-            <div class="flex h-screen">
-                <img src="assets/images/card1.png" class="card1">
-                <img src="assets/images/card1back.png" class="card1back">
-            </div>
-        </div> -->
-
     </section>
 
 
-    <section class="relative bg-[url(assets/images/fondo_seccion1.png)] bg-cover bg-center bg-no-repeat">
+    <div class="relative bg-[url(assets/images/fondo1.png)] bg-cover bg-center bg-no-repeat">
         
         <div class="flex contenedor-seccion1">
             <div class="flex-1 place-content-center relative">
                 <div class="card1">
-                    <img src="assets/images/card1.png">
-                    <img src="assets/images/card1flores.png" class="card1flores">
+                    <img src="assets/images/card1.png" data-aos="zoom-in-right" data-aos-duration="800">
+                    <img src="assets/images/card1flores.png" class="card1flores" data-aos="zoom-in" data-aos-duration="1500">
                 </div>
             </div>
-            <div class="flex-1 place-content-center relative">
+            <div class="flex-1 place-content-center relative" data-aos="zoom-in-left" data-aos-duration="800">
                 <img src="assets/images/card1back.png" class="card1back">
             </div>
         </div>
     
-    </section>
+    </div>
 
     <section class="relative bg-[url(assets/images/fondo_seccion2.png)] bg-cover bg-center bg-no-repeat">
         
         <div class="flex h-fit place-content-center seccion2 relative">
 
-            <img src="assets/images/seccion2_floreado.png" class="fondoflores">
-            <img src="assets/images/seccion2_fondoextra.png" class="fondoextra">
-            <img src="assets/images/seccion2_sobre.png" class="sobre">
-            <img src="assets/images/seccion2_disco.png" class="disco">
+            <img src="assets/images/seccion2_floreado.png" class="fondoflores" data-aos="zoom-in-right" data-aos-duration="800"
+                data-aos="fade-right" data-aos-duration="800">
 
-            <div class="bg-[url(assets/images/seccion2_vestimenta.png)] bg-cover bg-center bg-no-repeat vestimenta">
+            <img src="assets/images/seccion2_fondoextra.png" class="fondoextra"
+                data-aos="fade-left" data-aos-duration="700">
+
+            <img src="assets/images/seccion2_sobre.png" class="sobre"
+                data-aos="fade-down" data-aos-duration="500">
+
+            <img src="assets/images/seccion2_disco.png" class="disco"
+                data-aos="fade-up-left" data-aos-duration="1200">
+
+            <div class="bg-[url(assets/images/seccion2_vestimenta.png)] bg-cover bg-center bg-no-repeat vestimenta"
+                data-aos="fade-down-right" data-aos-duration="1400">
                 <p class="titulo text-center">Vestimenta</p>
                 <p class="texto text-center px-8">ELEGANTE<br>NO MARRON</p>
             </div>
             
-            <div class="bg-[url(assets/images/seccion2_musica.png)] bg-cover bg-center bg-no-repeat musica">
+            <div class="bg-[url(assets/images/seccion2_musica.png)] bg-cover bg-center bg-no-repeat musica"
+                data-aos="fade-down-left" data-aos-duration="1300">
                 <p class="titulo text-center">Música</p>
                 <p class="texto text-center px-8">¿QUE TE GUSTARIA ESCUCHAR?</p>
                 <a href="">
@@ -124,7 +128,8 @@
                 </a>
             </div>
 
-            <div class="bg-[url(assets/images/seccion2_detalles.png)] bg-cover bg-center bg-no-repeat detalles">
+            <div class="bg-[url(assets/images/seccion2_detalles.png)] bg-cover bg-center bg-no-repeat detalles"
+                data-aos="fade-up-right" data-aos-duration="1800">
                 <p class="titulo text-center">Detalles</p>
                 <p class="texto text-center px-8">20 DE MARZO 🞗 21:30 HS<br>JANOS ITUZAINGO</p>
                 <a href="">
@@ -202,6 +207,10 @@
         }, 1000);
 
 
+    </script>
+
+    <script>
+        AOS.init();
     </script>
 
 </body>

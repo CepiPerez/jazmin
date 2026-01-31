@@ -111,9 +111,19 @@
 .seccion2 .disco {
     position: absolute;
     width: 350px;
-    left: calc(50% + 100px);
-    bottom: 40px;
+    left: calc(50% + 80px);
+    bottom: 60px;
     z-index: 2;
+    animation: rotation 12s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .seccion2 .fondoextra {
@@ -156,7 +166,7 @@
     position: absolute;
     width: 290px;
     left: calc(50% + 252px);
-    top: 200px;
+    top: 140px;
     height: 210px;
     z-index: 3;
 }
