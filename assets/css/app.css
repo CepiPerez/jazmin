@@ -230,8 +230,8 @@
 
 .seccion4 .valores {
     position: inherit;
-    top: -308px;
-    left: 12px;
+    top: -328px;
+    left: 20px;
 }
 
 .seccion4 .valores * {
@@ -240,8 +240,8 @@
     color: #808175;
 }
 
-.seccion4 .valores span {
-    padding-left: 28px;
+.seccion4 .valores .valor {
+    width: 110px;
 }
 
 .seccion4 .logo {
