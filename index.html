@@ -59,10 +59,15 @@
 </head>
 <body>
 
-    <section class="relative bg-[url(assets/images/herosmall.png)]
+    <section class="relative 
+        bg-[url(assets/images/herosmall.png)]
         md:bg-[url(assets/images/hero.png)]
-        bg-fixed bg-cover bg-center bg-no-repeat herosection"  style="height: 100dvh;">
+        bg-scroll md:bg-fixed
+        bg-cover bg-center bg-no-repeat herosection 
+        min-h-screen h-dvh">
 
+    <section class="relative overflow-hidden h-dvh herosection">
+        
         <div class="flex h-screen">
             <div class="flex-1 place-content-center">
                 <div class="text-right">
@@ -162,7 +167,7 @@
                     data-animate="zoom-in-right" data-duration="2800">
             <!-- </div> -->
         </div>
-    
+  
     </div>
 
     <section class="relative bg-[url(assets/images/fondo_seccion2.png)] bg-cover bg-center bg-no-repeat">
@@ -210,7 +215,10 @@
     </section>
 
 
-    <section class="relative bg-[url(assets/images/seccion3.png)] h-screen bg-fixed bg-cover bg-center bg-no-repeat">
+    <section class="relative bg-[url(assets/images/seccion3.png)] 
+        bg-scroll md:bg-fixed
+        bg-cover bg-center bg-no-repeat
+        min-h-screen h-dvh">
     </section>
 
 
