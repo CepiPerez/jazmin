@@ -43,6 +43,10 @@ section {
     overflow: hidden;
 }
 
+.herosection {
+    height: 100vdh;
+}
+
 
 .titulo {
     font-family: 'Amour', Georgia, serif;
