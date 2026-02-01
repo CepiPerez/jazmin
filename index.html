@@ -393,6 +393,12 @@
         function actualizarCounter(contenedor, nuevoValor) {
             const actual = contenedor.querySelector('.counter-number');
 
+            const items = contenedor.children;
+
+            while (items.length > 1) {
+                items.firstElementChild.remove()
+            }
+
             if (actual && (actual.innerHTML == nuevoValor)) return;
             
             const nuevo = document.createElement('span');
@@ -408,7 +414,7 @@
             }
         }
 
-        const intervalo = setInterval(() => {
+        function actualizarCountdown() {
             const ahora = new Date().getTime();
             const diferencia = fechaObjetivo - ahora;
 
@@ -421,7 +427,6 @@
             const mm = String(minutos).padStart(2, '0');
             const ss = String(segundos).padStart(2, '0');
 
-            //contenedor_dia.innerHTML = dias;
             actualizarCounter(contenedor_dia, dias);
             actualizarCounter(contenedor_hor, hh);
             actualizarCounter(contenedor_min, mm);
@@ -431,7 +436,11 @@
                 clearInterval(intervalo);
                 console.log("¡Tiempo finalizado!");
             }
-        }, 500);
+        }
+
+        actualizarCountdown();
+
+        const intervalo = setInterval(actualizarCountdown, 1000);
 
     </script>
 
