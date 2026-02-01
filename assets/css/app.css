@@ -64,7 +64,7 @@ section {
 }
 
 .bordado-izquierdo {
-    height: 100vh;
+    height: 100dvh;
     width: 28px;
     left: 0;
     top: 0;
@@ -74,7 +74,7 @@ section {
 }
 
 .bordado-derecho {
-    height: 100vh;
+    height: 100dvh;
     width: 28px;
     right: 0;
     top: 0;
@@ -411,7 +411,7 @@ form * {
         height: 28px;
         width: 100vw;
         right: 0;
-        top: calc(100vh - 28px);
+        top: calc(100dvh - 28px);
         background: url('../images/bordado_abajo.png');
         background-repeat: repeat-x;
         background-size: contain;
