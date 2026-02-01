@@ -17,6 +17,16 @@ const observer = new IntersectionObserver((entries) => {
                 el.style.setProperty('--rotate', el.dataset.rotate);
             }
 
+            // scale (si existe)
+            if (el.dataset.scale) {
+                el.style.setProperty('--scale', el.dataset.scale);
+            }
+
+            // opacity (si existe)
+            if (el.dataset.opacity) {
+                el.style.setProperty('--opacity', el.dataset.opacity);
+            }
+
             el.classList.add('in-view');
         } else {
             // LEAVE

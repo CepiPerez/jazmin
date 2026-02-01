@@ -125,16 +125,16 @@
                 data-animate="fade-down-right" data-duration="1300">
                 <p class="titulo text-center">Música</p>
                 <p class="texto text-center px-8">¿QUE TE GUSTARIA ESCUCHAR?</p>
-                <a href="">
+                <span id="openModalCanciones">
                     <img src="assets/images/seccion2_boton_canciones.png" class="boton">
-                </a>
+                </span>
             </div>
 
             <div class="bg-[url(assets/images/seccion2_detalles.png)] bg-cover bg-center bg-no-repeat detalles"
                 data-animate="fade-left" data-duration="1000" data-rotate="-5deg">
                 <p class="titulo text-center">Detalles</p>
                 <p class="texto text-center px-8">20 DE MARZO 🞗 21:30 HS<br>JANOS ITUZAINGO</p>
-                <a href="">
+                <a href="https://maps.app.goo.gl/AoMCJnjinCZJFrkQ6" target="_blank">
                     <img src="assets/images/seccion2_boton_mapa.png" class="boton">
                 </a>
             </div>
@@ -180,8 +180,11 @@
                         <div class="valor">SEGUNDOS</div>
                     </div>
 
-                    <img src="assets/images/seccion4_boton.png" class="boton"
-                        data-animate="fade-right" data-duration="1000" data-rotate="-5deg">
+                    <span id="openModalConfirmacion">
+                        <img src="assets/images/seccion4_boton.png" class="boton"
+                            data-animate="fade-right" data-duration="1000" data-rotate="-5deg" 
+                            data-scale="0.95" data-opacity="0.7">
+                    </span>
 
                 </div>
 
@@ -191,10 +194,107 @@
 
     </section>
 
-    <div class="final w-screen relative">
+    <div class="final relative">
         <img src="assets/images/seccion4.png" class="fondo">
         <img src="assets/images/logo.png" class="logo">
     </div>
+
+
+    <div id="modalConfirmacion" class="fixed inset-0 z-50 hidden items-center justify-center">
+
+        <div id="modalConfirmacionOverlay" class="absolute inset-0 bg-black/70"></div>
+
+        <div id="modalConfirmacionContent" class="relative z-10 w-full max-w-md mx-4 rounded-2xl p-6 transform 
+            transition-all duration-300 ease-out scale-100 opacity-100 estampilla">
+
+            <img src="assets/images/fondo_confirmar.png" class="absolute fondo_confirmar">
+            <!-- <img src="assets/images/header_confirmar.png" class="absolute header_confirmar"> -->
+
+            <button id="closeModalConfirmacion" class="absolute top-4 right-6 text-gray-400 hover:text-gray-700 text-xl">
+                ✕
+            </button>
+
+            <form class="space-y-6 m-4 text-center">
+
+                <div>
+                    <label class="block mb-2">NOMBRE Y APELLIDO</label>
+                    <input type="text" required
+                        class="w-full bg-transparent text-center border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div>
+                    <label class="block mb-2">¿ASISTIRAS AL EVENTO?</label>
+                    <div class="flex gap-4 place-content-center">
+                        <label class="flex items-center gap-2">
+                            <input type="radio" name="asistencia" value="si" checked="true">SI
+                        </label>
+                        <label class="flex items-center gap-2 ">
+                            <input type="radio" name="asistencia" value="no">NO
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-2">¿TENES ALGUNA RESTRICCION ALIMENTARIA?</label>
+                    <input type="text" required
+                        class="w-full bg-transparent text-center border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Vegetariano, celíaco, alergia a...">
+                </div>
+
+                <button type="submit" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
+                    <img src="assets/images/boton_enviar_confirmacion.png" alt="Confirmar" class="boton confirmar">
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div id="modalCanciones" class="fixed inset-0 z-50 hidden items-center justify-center">
+
+        <div id="modalCancionesOverlay" class="absolute inset-0 bg-black/70"></div>
+
+        <div id="modalCancionesContent" class="relative z-10 w-full max-w-md mx-4 rounded-2xl p-6 transform 
+            transition-all duration-300 ease-out scale-100 opacity-100 estampilla">
+
+            <img src="assets/images/fondo_confirmar.png" class="absolute fondo_confirmar">
+
+            <button id="closeModalCanciones" class="absolute top-4 right-6 text-gray-400 hover:text-gray-700 text-xl">
+                ✕
+            </button>
+
+            <form class="space-y-6 m-4 text-center">
+
+                <div style="margin-top: 1.5rem;">
+                    <label class="block mb-1">CANCION 1</label>
+                    <input type="text" required
+                        class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Nombre de la canción...">
+                </div>
+
+                <div>
+                    <label class="block mb-1">CANCION 2</label>
+                    <input type="text"
+                        class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Nombre de la canción...">
+                </div>
+
+                <div>
+                    <label class="block mb-1">CANCION 3</label>
+                    <input type="text"
+                        class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Nombre de la canción...">
+                </div>
+
+                <button type="submit" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
+                    <img src="assets/images/boton_enviar_canciones.png" alt="Confirmar" class="boton sugerir">
+                </button>
+
+            </form>
+        </div>
+    </div>
+
 
 
     <script src="assets/js/oberver.js"></script>
@@ -234,9 +334,85 @@
 
     </script>
 
-    <!-- <script>
-        AOS.init();
-    </script> -->
+    <script>
+        const openBtnConfirmacion = document.getElementById('openModalConfirmacion');
+        const modalConfirmacion = document.getElementById('modalConfirmacion');
+        const modalContentConfirmacion = document.getElementById('modalConfirmacionContent');
+        const closeBtnConfirmacion = document.getElementById('closeModalConfirmacion');
+        const overlayConfirmacion = document.getElementById('modalConfirmacionOverlay');
+
+        function openModalConfirmacion() {
+            modalConfirmacion.classList.remove('hidden');
+            modalConfirmacion.classList.add('flex');
+
+            requestAnimationFrame(() => {
+                modalContentConfirmacion.classList.remove('scale-95', 'opacity-0');
+                modalContentConfirmacion.classList.add('scale-100', 'opacity-100');
+            });
+        }
+
+        function closeModalConfirmacion() {
+            modalContentConfirmacion.classList.add('scale-95', 'opacity-0');
+            modalContentConfirmacion.classList.remove('scale-100', 'opacity-100');
+
+            setTimeout(() => {
+                modalConfirmacion.classList.add('hidden');
+                modalConfirmacion.classList.remove('flex');
+            }, 300);
+        }
+
+        openBtnConfirmacion.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModalConfirmacion();
+        });
+
+        closeBtnConfirmacion.addEventListener('click', closeModalConfirmacion);
+        overlayConfirmacion.addEventListener('click', closeModalConfirmacion);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModalConfirmacion();
+        });
+
+
+        const openBtnCanciones = document.getElementById('openModalCanciones');
+        const modalCanciones = document.getElementById('modalCanciones');
+        const modalContentCanciones = document.getElementById('modalCancionesContent');
+        const closeBtnCanciones = document.getElementById('closeModalCanciones');
+        const overlayCanciones = document.getElementById('modalCancionesOverlay');
+
+        function openModalCanciones() {
+            modalCanciones.classList.remove('hidden');
+            modalCanciones.classList.add('flex');
+
+            requestAnimationFrame(() => {
+                modalContentCanciones.classList.remove('scale-95', 'opacity-0');
+                modalContentCanciones.classList.add('scale-100', 'opacity-100');
+            });
+        }
+
+        function closeModalCanciones() {
+            modalContentCanciones.classList.add('scale-95', 'opacity-0');
+            modalContentCanciones.classList.remove('scale-100', 'opacity-100');
+
+            setTimeout(() => {
+                modalCanciones.classList.add('hidden');
+                modalCanciones.classList.remove('flex');
+            }, 300);
+        }
+
+        openBtnCanciones.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModalCanciones();
+        });
+
+        closeBtnCanciones.addEventListener('click', closeModalCanciones);
+        overlayCanciones.addEventListener('click', closeModalCanciones);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModalCanciones();
+        });
+    </script>
+
 
 </body>
 </html>
