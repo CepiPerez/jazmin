@@ -510,8 +510,8 @@ form * {
     }
 
     .seccion4 .contenedor {
-        width: 300px;
-        height: 126px;
+        width: 286px;
+        height: 120px;
     }
 
     .seccion4 .subtitulo {
@@ -519,38 +519,38 @@ form * {
     }
 
     .seccion4 .valores {
-        top: -120px;
+        top: -108px;
     }
 
     .seccion4 .valores .valor {
-        font-size: 54px;
-        width: 66px;
+        font-size: 48px;
+        width: 64px;
     }
 
     .seccion4 .valores-detalle {
-        top: -126px;
+        top: -116px;
     }
 
     .seccion4 .valores-detalle .valor {
         font-size: 12px;
-        width: 66px;
+        width: 64px;
     }
 
     .seccion4 .ondas {
-        width: 85px;
-        top: -14px;
-        left: calc(50% - 206px);
+        width: 80px;
+        top: -13px;
+        left: calc(50% - 188px);
     }
 
     .seccion4 .sello {
-        width: 76px;
-        height: 78px;
-        top: 0px;
-        left: calc(50% - 206px);
+        width: 70px;
+        height: 72px;
+        top: -4px;
+        left: calc(50% - 198px);
     }
 
     .seccion4 .boton {
-        top: 120px;
+        top: 114px;
         left: calc(50% - 66px);
         width: 230px;
     }
