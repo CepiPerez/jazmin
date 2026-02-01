@@ -240,11 +240,19 @@
                     <img src="assets/images/seccion4_sello.png" class="sello"
                         data-animate="fade-left" data-duration="2500">
 
-                    <div class="valores flex place-content-center">
-                        <div class="valor" id="dias">-</div>
-                        <div class="valor" id="horas">-</div>
-                        <div class="valor" id="minutos">-</div>
-                        <div class="valor" id="segundos">-</div>
+                    <div class="valores flex place-content-center flip">
+                        <div id="dias" class="valor counter">
+                            <span class="counter-number">00</span>
+                        </div>
+                        <div id="horas" class="valor counter">
+                            <span class="counter-number">00</span>
+                        </div>
+                        <div id="minutos" class="valor counter">
+                            <span class="counter-number">00</span>
+                        </div>
+                        <div id="segundos" class="valor counter">
+                            <span class="counter-number">00</span>
+                        </div>
                     </div>
 
                     <div class="valores-detalle flex place-content-center">
@@ -374,12 +382,31 @@
     <script src="assets/js/oberver.js"></script>
 
     <script> 
-        const fechaObjetivo = new Date(2026, 3, 20, 21, 30, 0).getTime();
+        const fechaObjetivo = new Date(2026, 2, 20, 21, 30, 0).getTime();
 
         const contenedor_dia = document.getElementById('dias');
         const contenedor_hor = document.getElementById('horas');
         const contenedor_min = document.getElementById('minutos');
         const contenedor_seg = document.getElementById('segundos');
+
+
+        function actualizarCounter(contenedor, nuevoValor) {
+            const actual = contenedor.querySelector('.counter-number');
+
+            if (actual && (actual.innerHTML == nuevoValor)) return;
+            
+            const nuevo = document.createElement('span');
+            nuevo.className = 'counter-number enter';
+            nuevo.innerHTML = nuevoValor;
+
+            contenedor.appendChild(nuevo);
+
+            if (actual) {
+                actual.classList.add('exit');
+                actual.classList.remove('enter');
+                actual.addEventListener('animationend', () => actual.remove(), { once: true });
+            }
+        }
 
         const intervalo = setInterval(() => {
             const ahora = new Date().getTime();
@@ -394,17 +421,17 @@
             const mm = String(minutos).padStart(2, '0');
             const ss = String(segundos).padStart(2, '0');
 
-            contenedor_dia.innerHTML = dias;
-            contenedor_hor.innerHTML = hh;
-            contenedor_min.innerHTML = mm;
-            contenedor_seg.innerHTML = ss;
+            //contenedor_dia.innerHTML = dias;
+            actualizarCounter(contenedor_dia, dias);
+            actualizarCounter(contenedor_hor, hh);
+            actualizarCounter(contenedor_min, mm);
+            actualizarCounter(contenedor_seg, ss);
 
             if (diferencia < 0) {
                 clearInterval(intervalo);
                 console.log("¡Tiempo finalizado!");
             }
-        }, 1000);
-
+        }, 500);
 
     </script>
 
