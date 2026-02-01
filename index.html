@@ -54,21 +54,20 @@
 
     <!-- Application styles -->
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/animacion.css">
     
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 </head>
 <body>
 
-    <section class="relative bg-[url(assets/images/hero.png)] bg-fixed bg-cover bg-center bg-no-repeat">
+    <section class="relative bg-[url(assets/images/herosmall.png)]
+        md:bg-[url(assets/images/hero.png)]
+        bg-fixed bg-cover bg-center bg-no-repeat">
 
         <div class="flex h-screen">
             <div class="flex-1 place-content-center">
                 <div class="text-right">
-                    <div class="titulo relative" data-aos="fade-right" data-aos-duration="1500">Jazmín
-                        <div class="subtitulo" data-aos="fade-right" data-aos-duration="2000">🞗 MIS XV AÑOS 🞗</div>
+                    <div class="titulo relative" data-animate="fade-right" data-duration="1500">Jazmín
+                        <div class="subtitulo" data-animate="fade-right" data-duration="2000">🞗 MIS XV AÑOS 🞗</div>
                     </div>
                 </div>
             </div>
@@ -83,16 +82,19 @@
 
     <div class="relative bg-[url(assets/images/fondo_seccion1.png)] bg-cover bg-center bg-no-repeat">
         
-        <div class="flex contenedor-seccion1">
-            <div class="flex-1 place-content-center relative">
+        <div class="flex flex-col md:flex-row contenedor-seccion1 relative">
+            <!-- <div class="flex-1 place-content-center relative"> -->
                 <div class="card1">
-                    <img src="assets/images/card1.png" data-aos="zoom-in-right" data-aos-duration="800">
-                    <img src="assets/images/card1flores.png" class="card1flores" data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="assets/images/card1.png" data-animate="zoom-in-right" data-duration="800">
+                    
+                    <img src="assets/images/card1flores.png" class="card1flores" 
+                        data-animate="zoom-in" data-duration="1500" data-delay="600">
                 </div>
-            </div>
-            <div class="flex-1 place-content-center relative" data-aos="zoom-in-left" data-aos-duration="800">
-                <img src="assets/images/card1back.png" class="card1back">
-            </div>
+            <!-- </div>
+            <div class="flex-1 place-content-center relative" data-animate="zoom-in-left" data-duration="800"> -->
+                <img src="assets/images/card1back.png" class="card1back"
+                    data-animate="zoom-in-right" data-duration="2800">
+            <!-- </div> -->
         </div>
     
     </div>
@@ -101,26 +103,26 @@
         
         <div class="flex h-fit place-content-center seccion2 relative">
 
-            <img src="assets/images/seccion2_floreado.png" class="fondoflores" data-aos="zoom-in-right" data-aos-duration="800"
-                data-aos="fade-right" data-aos-duration="800">
+            <img src="assets/images/seccion2_floreado.png" class="fondoflores"
+                data-animate="fade-right" data-duration="2800">
 
             <img src="assets/images/seccion2_fondoextra.png" class="fondoextra"
-                data-aos="fade-left" data-aos-duration="700">
+                data-animate="fade-left" data-duration="700">
 
             <img src="assets/images/seccion2_sobre.png" class="sobre"
-                data-aos="fade-down" data-aos-duration="500">
+                data-animate="fade-down" data-duration="500">
 
             <img src="assets/images/seccion2_disco.png" class="disco"
-                data-aos="fade-up-left" data-aos-duration="1200">
+                data-animate="fade-up-left" data-duration="1200">
 
-            <div class="bg-[url(assets/images/seccion2_vestimenta.png)] bg-cover bg-center bg-no-repeat vestimenta"
-                data-aos="fade-down-right" data-aos-duration="1400">
+            <div class="bg-[url(assets/images/seccion2_vestimenta.png)] bg-contain bg-center bg-no-repeat vestimenta"
+                data-animate="fade-down-right" data-duration="1400">
                 <p class="titulo text-center">Vestimenta</p>
                 <p class="texto text-center px-8">ELEGANTE<br>NO MARRON</p>
             </div>
             
             <div class="bg-[url(assets/images/seccion2_musica.png)] bg-cover bg-center bg-no-repeat musica"
-                data-aos="fade-down-left" data-aos-duration="1300">
+                data-animate="fade-down-right" data-duration="1300">
                 <p class="titulo text-center">Música</p>
                 <p class="texto text-center px-8">¿QUE TE GUSTARIA ESCUCHAR?</p>
                 <a href="">
@@ -129,7 +131,7 @@
             </div>
 
             <div class="bg-[url(assets/images/seccion2_detalles.png)] bg-cover bg-center bg-no-repeat detalles"
-                data-aos="fade-up-right" data-aos-duration="1800">
+                data-animate="fade-left" data-duration="1000" data-rotate="-5deg">
                 <p class="titulo text-center">Detalles</p>
                 <p class="texto text-center px-8">20 DE MARZO 🞗 21:30 HS<br>JANOS ITUZAINGO</p>
                 <a href="">
@@ -146,14 +148,23 @@
     </section>
 
 
-    <section class="relative bg-[url(assets/images/seccion4.png)] h-fit bg-white bg-contain bg-bottom bg-no-repeat">
+    <section class="relative h-fit bg-white bg-contain bg-bottom bg-no-repeat">
 
         <div class="flex seccion4">
-            <div class="flex-1 place-content-center text-center">
-                <p class="titulo">Ojalá puedas acompañarme</p>
+            <div class="flex-1 place-content-center text-center w-screen">
+                <p class="titulo" data-animate="zoom-in" data-duration="2000">
+                    Ojalá puedas acompañarme
+                </p>
+
+                <p class="subtitulo">FALTAN:</p>
 
                 <div class="tiempo relative">
                     <img src="assets/images/seccion4_contenedor.png" class="contenedor">
+
+                    <img src="assets/images/seccion4_ondas.png" class="ondas">
+
+                    <img src="assets/images/seccion4_sello.png" class="sello"
+                        data-animate="fade-left" data-duration="2500">
 
                     <div class="valores flex place-content-center">
                         <div class="valor" id="dias">-</div>
@@ -162,17 +173,31 @@
                         <div class="valor" id="segundos">-</div>
                     </div>
 
+                    <div class="valores-detalle flex place-content-center">
+                        <div class="valor">DIAS</div>
+                        <div class="valor">HORAS</div>
+                        <div class="valor">MINUTOS</div>
+                        <div class="valor">SEGUNDOS</div>
+                    </div>
+
+                    <img src="assets/images/seccion4_boton.png" class="boton"
+                        data-animate="fade-right" data-duration="1000" data-rotate="-5deg">
+
                 </div>
 
-
-
-
-                <img src="assets/images/logo.png" class="logo">
-
             </div>
+            
         </div>
 
     </section>
+
+    <div class="final w-screen relative">
+        <img src="assets/images/seccion4.png" class="fondo">
+        <img src="assets/images/logo.png" class="logo">
+    </div>
+
+
+    <script src="assets/js/oberver.js"></script>
 
     <script> 
         const fechaObjetivo = new Date(2026, 3, 20, 21, 30, 0).getTime();
@@ -209,9 +234,9 @@
 
     </script>
 
-    <script>
+    <!-- <script>
         AOS.init();
-    </script>
+    </script> -->
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 :root {
-  --color-textos: #3b412f;
+  --color-texto: #3b412f;
+  --color-texto-claro: #808175;
 }
 
 @font-face {
@@ -38,6 +39,10 @@
 }
 
 
+section {
+    overflow: hidden;
+}
+
 
 .titulo {
     font-family: 'Amour', Georgia, serif;
@@ -56,7 +61,7 @@
 
 .bordado-izquierdo {
     height: 100vh;
-    width: 30px;
+    width: 28px;
     left: 0;
     top: 0;
     background: url('../images/bordado-izq.png');
@@ -66,7 +71,7 @@
 
 .bordado-derecho {
     height: 100vh;
-    width: 30px;
+    width: 28px;
     right: 0;
     top: 0;
     background: url('../images/bordado-der.png');
@@ -74,23 +79,23 @@
     background-size: contain;
 }
 
-
 .contenedor-seccion1 {
-    height: min(50vw, 800px);
+    height: fit-content;
 }
 
 .card1 {
-    position: absolute;
-    width: 90%;
+    position: inherit;
+    width: 45%;
     top: 100px;
-    right: -70px;
+    left: 9%;
+    margin-bottom: 260px;
 }
 
 .card1back {
-    position: absolute;
-    width: 90%;
-    top: 150px;
-    left: -70px;
+    position: inherit;
+    width: 45%;
+    height: 60%;
+    top: 160px;
 }
 
 .card1flores {
@@ -108,21 +113,36 @@
     margin-bottom: 200px;
     z-index: 1;
 }
+
 .seccion2 .disco {
     position: absolute;
     width: 350px;
     left: calc(50% + 80px);
     bottom: 60px;
     z-index: 2;
-    animation: rotation 12s infinite linear;
+}
+.seccion2 .disco.in-view {
+    animation:
+        intro-rotation 5s ease-in forwards,
+        rotation-linear 3s linear infinite;
+    animation-delay: 0s, 5s;
 }
 
-@keyframes rotation {
+@keyframes intro-rotation {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation-linear {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(720deg);
     }
 }
 
@@ -151,13 +171,13 @@
 .seccion2 .vestimenta .titulo {
     font-family: 'Imperial', Georgia, serif;
     font-size: 52px;
-    color: var(--color-textos);
+    color: var(--color-texto);
     margin-top: 10px;
 }
 .seccion2 .vestimenta .texto {
     font-family: 'BellotaText', Georgia, serif;
     font-size: 16px;
-    color: var(--color-textos);
+    color: var(--color-texto);
     line-height: 18px;
     margin-top: -12px;
 }
@@ -173,18 +193,19 @@
 .seccion2 .musica .titulo {
     font-family: 'Imperial', Georgia, serif;
     font-size: 52px;
-    color: var(--color-textos);
+    color: var(--color-texto);
+    margin-top: 10px;
 }
 .seccion2 .musica .texto {
     font-family: 'BellotaText', Georgia, serif;
     font-size: 16px;
-    color: var(--color-textos);
+    color: var(--color-texto);
     line-height: 18px;
     margin-top: -12px;
 }
 .seccion2 .musica .boton {
     width: 182px;
-    margin: 12px 0 0 52px;
+    margin: 12px auto;
 }
 
 .seccion2 .detalles {
@@ -194,59 +215,277 @@
     top: 470px;
     height: 216px;
     z-index: 3;
+    opacity: 0;
 }
+
 .seccion2 .detalles .titulo {
     font-family: 'Imperial', Georgia, serif;
     font-size: 52px;
-    color: var(--color-textos);
+    color: var(--color-texto);
     margin-top: 14px;
 }
 .seccion2 .detalles .texto {
     font-family: 'BellotaText', Georgia, serif;
     font-size: 16px;
-    color: var(--color-textos);
+    color: var(--color-texto);
     line-height: 18px;
     margin-top: -12px;
 }
 .seccion2 .detalles .boton {
     width: 164px;
-    margin: 18px 0 0 80px;
+    margin: 18px auto;
 }
 
 
 .seccion4 .titulo {
-    font-family: 'Amour', Georgia, serif;
+    font-family: 'Imperial', Georgia, serif;
     font-size: 82px;
-    color: var(--color-textos);
+    color: var(--color-texto-claro);
     margin-top: 40px;
     margin-bottom: 10px;
 }
 
+.seccion4 .subtitulo {
+    font-family: 'BellotaText', Georgia, serif;
+    font-size: 30px;
+    color: var(--color-texto-claro);
+}
+
+.seccion4 .tiempo {
+    margin-top: 6px;
+    margin-bottom: 190px;
+}
+
 .seccion4 .contenedor {
-    width: 700px;
-    height: 400px;
+    width: 550px;
+    height: 240px;
     margin: auto;
+}
+
+.seccion4 .ondas {
+    width: 150px;
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 365px);
+}
+
+.seccion4 .sello {
+    width: 135px;
+    height: 140px;
+    position: absolute;
+    top: -1px;
+    left: calc(50% - 370px);
+}
+
+.seccion4 .boton {
+    width: 330px;
+    position: absolute;
+    top: 210px;
+    left: calc(50% + 36px);
 }
 
 .seccion4 .valores {
     position: inherit;
-    top: -328px;
-    left: 20px;
-}
-
-.seccion4 .valores * {
-    font-family: 'Alegreya', Georgia, serif;
-    font-size: 94px;
-    color: #808175;
+    top: -215px;
 }
 
 .seccion4 .valores .valor {
+    font-family: 'Alegreya', Georgia, serif;
+    font-size: 94px;
+    color: var(--color-texto-claro);
     width: 110px;
 }
 
-.seccion4 .logo {
-    width: 140px;
-    margin: auto;
-    /* margin-top: 130px; */
-    margin-bottom: 30px;
+.seccion4 .valores-detalle {
+    position: inherit;
+    top: -232px;
+}
+
+.seccion4 .valores-detalle .valor {
+    font-family: 'BellotaText', Georgia, serif;
+    font-size: 20px;
+    color: var(--color-texto-claro);
+    width: 110px;
+}
+
+.final .logo {
+    position: absolute;
+    width: 120px;
+    bottom: 20px;
+    z-index: 1;
+    left: calc(50% - 60px);
+}
+
+.final .fondo {
+    position: absolute;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center;
+    height: 300px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .bordado-izquierdo {
+        height: 28px;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        background: url('../images/bordado_arriba.png');
+        background-repeat: repeat-x;
+        background-size: contain;
+    }
+
+    .bordado-derecho {
+        height: 28px;
+        width: 100vw;
+        right: 0;
+        top: calc(100vh - 28px);
+        background: url('../images/bordado_abajo.png');
+        background-repeat: repeat-x;
+        background-size: contain;
+    }
+
+    .titulo {
+        font-size: 90px;
+        left: calc(50% - 80px);
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        top: -50px;
+        left: calc(50% - 132px);
+    }
+
+    .card1 {
+        width: 80%;
+        top: 100px;
+        margin-bottom: 0;
+    }
+
+    .card1back {
+        width: 80%;
+        top: 70px;
+        left: 50px;
+        margin-bottom: 180px;
+    }
+
+
+    .seccion2 .disco {
+        width: 240px;
+        left: calc(50% - 178px);
+        bottom: 160px;
+    }
+
+    .seccion2 .detalles {
+        left: 30px;
+        top: 40px;
+        height: 216px;
+        width: 300px;
+    }
+
+    .seccion2 .sobre {
+        width: 300px;
+        margin-top: 170px;
+        margin-bottom: 400px;
+        margin-left: 40px;
+    }
+
+    .seccion2 .fondoextra {
+        position: absolute;
+        width: 244px;
+        left: calc(50% - 107px);
+        top: 520px;
+        z-index: 2;
+    }
+
+    .seccion2 .fondoflores {
+        position: absolute;
+        width: 300px;
+        right: calc(50% - 122px);
+        top: 210px;
+    }
+
+    .seccion2 .vestimenta {
+        right: calc(50% - 32px);
+        top: 455px;
+        height: 125px;
+        width: 210px;
+    }
+    .seccion2 .vestimenta .titulo {
+        margin-top: 2px;
+    }
+
+    .seccion2 .musica {
+        width: 266px;
+        left: calc(50% - 97px);
+        top: 753px;
+        height: 184px;
+    }
+    .seccion2 .musica .titulo {
+        margin-top: 0px;
+    }
+
+    
+    .seccion4 .tiempo {
+        margin-left: 32px;
+        margin-bottom: 260px;
+    }
+
+    .seccion4 .titulo {
+        font-size: 62px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        line-height: 54px;
+    }
+
+    .seccion4 .contenedor {
+        width: 300px;
+        height: 126px;
+    }
+
+    .seccion4 .subtitulo {
+        font-size: 30px;
+    }
+
+    .seccion4 .valores {
+        top: -120px;
+    }
+
+    .seccion4 .valores .valor {
+        font-size: 54px;
+        width: 66px;
+    }
+
+    .seccion4 .valores-detalle {
+        top: -126px;
+    }
+
+    .seccion4 .valores-detalle .valor {
+        font-size: 12px;
+        width: 66px;
+    }
+
+    .seccion4 .ondas {
+        width: 85px;
+        top: -14px;
+        left: calc(50% - 206px);
+    }
+
+    .seccion4 .sello {
+        width: 76px;
+        height: 78px;
+        top: 0px;
+        left: calc(50% - 206px);
+    }
+
+    .seccion4 .boton {
+        top: 120px;
+        left: calc(50% - 66px);
+        width: 230px;
+    }
+
+
 }
