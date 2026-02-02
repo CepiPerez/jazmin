@@ -241,17 +241,17 @@
                         data-animate="fade-left" data-duration="2500">
 
                     <div class="valores flex place-content-center flip">
-                        <div id="dias" class="valor counter">
-                            <span class="counter-number">00</span>
+                        <div class="valor counter">
+                            <span id="dias" class="counter-number">00</span>
                         </div>
-                        <div id="horas" class="valor counter">
-                            <span class="counter-number">00</span>
+                        <div class="valor counter">
+                            <span id="horas" class="counter-number">00</span>
                         </div>
-                        <div id="minutos" class="valor counter">
-                            <span class="counter-number">00</span>
+                        <div class="valor counter">
+                            <span id="minutos" class="counter-number">00</span>
                         </div>
-                        <div id="segundos" class="valor counter">
-                            <span class="counter-number">00</span>
+                        <div class="valor counter">
+                            <span id="segundos" class="counter-number">00</span>
                         </div>
                     </div>
 
@@ -296,11 +296,13 @@
                 ✕
             </button>
 
-            <form class="space-y-6 m-4 text-center" action="https://formspree.io/f/xpqlroko" method="POST">
+            <form class="space-y-6 m-4 text-center" id="formConfirmacion"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSei0_Jmuq0n4o6dKfuAg3l2la7ImT-3lODprOkpU26hFmPBqQ/formResponse"
+                method="POST">
 
                 <div>
                     <label class="block mb-2">NOMBRE Y APELLIDO</label>
-                    <input type="text" name="nombre" required
+                    <input type="text" name="entry.429864442" required
                         class="w-full bg-transparent text-center border-b border-black/40 focus:border-black focus:outline-none"
                         placeholder="Ej: Juan Pérez">
                 </div>
@@ -309,22 +311,22 @@
                     <label class="block mb-2">¿ASISTIRAS AL EVENTO?</label>
                     <div class="flex gap-4 place-content-center">
                         <label class="flex items-center gap-2">
-                            <input type="radio" name="asistencia" value="si" checked="true">SI
+                            <input type="radio" name="entry.384766204" value="Si" checked="true">SI
                         </label>
                         <label class="flex items-center gap-2 ">
-                            <input type="radio" name="asistencia" value="no">NO
+                            <input type="radio" name="entry.384766204" value="No">NO
                         </label>
                     </div>
                 </div>
 
                 <div>
                     <label class="block mb-2">¿TENES ALGUNA RESTRICCION ALIMENTARIA?</label>
-                    <input type="text" name="restriccion" required
+                    <input type="text" name="entry.1135856130" required
                         class="w-full bg-transparent text-center border-b border-black/40 focus:border-black focus:outline-none"
                         placeholder="Vegetariano, celíaco, alergia a...">
                 </div>
 
-                <button type="submit" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
+                <button type="submit" id="btnEnviarConfirmacion" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
                     <img src="assets/images/boton_enviar_confirmacion.png" alt="Confirmar" class="boton confirmar">
                 </button>
 
@@ -346,30 +348,34 @@
                 ✕
             </button>
 
-            <form class="space-y-6 m-4 text-center" action="https://formspree.io/f/xpqlroko" method="POST">
+            <form class="space-y-6 m-4 text-center" id="formCanciones"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSdb0iDIsWtknwkkt1d1ZnZ1KitzD2cT7qkw5nyUk6r8G_xEYA/formResponse"
+                method="POST">
+
+                <input type="hidden" name="_redirect" value="index.html">
 
                 <div style="margin-top: 1.5rem;">
                     <label class="block mb-1">CANCION 1</label>
-                    <input type="text" name="cancion_1" required
+                    <input type="text" name="entry.363681474" required
                         class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
                         placeholder="Nombre de la canción...">
                 </div>
 
                 <div>
                     <label class="block mb-1">CANCION 2</label>
-                    <input type="text" name="cancion_1"
+                    <input type="text" name="entry.1255553650"
                         class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
                         placeholder="Nombre de la canción...">
                 </div>
 
                 <div>
                     <label class="block mb-1">CANCION 3</label>
-                    <input type="text" name="cancion_1"
+                    <input type="text" name="entry.641574439"
                         class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
                         placeholder="Nombre de la canción...">
                 </div>
 
-                <button type="submit" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
+                <button type="submit" id="btnEnviarCanciones" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
                     <img src="assets/images/boton_enviar_canciones.png" alt="Confirmar" class="boton sugerir">
                 </button>
 
@@ -396,7 +402,7 @@
             const items = contenedor.children;
 
             while (items.length > 1) {
-                items.firstElementChild.remove()
+                items.firstElementChild?.remove()
             }
 
             if (actual && (actual.innerHTML == nuevoValor)) return;
@@ -427,10 +433,14 @@
             const mm = String(minutos).padStart(2, '0');
             const ss = String(segundos).padStart(2, '0');
 
-            actualizarCounter(contenedor_dia, dias);
-            actualizarCounter(contenedor_hor, hh);
-            actualizarCounter(contenedor_min, mm);
-            actualizarCounter(contenedor_seg, ss);
+            contenedor_dia.innerHTML = dias;
+            contenedor_hor.innerHTML = hh;
+            contenedor_min.innerHTML = mm;
+            contenedor_seg.innerHTML = ss;
+            //actualizarCounter(contenedor_dia, dias);
+            //actualizarCounter(contenedor_hor, hh);
+            //actualizarCounter(contenedor_min, mm);
+            //actualizarCounter(contenedor_seg, ss);
 
             if (diferencia < 0) {
                 clearInterval(intervalo);
@@ -520,6 +530,80 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModalCanciones();
+        });
+    </script>
+
+    <script>
+        window.addEventListener("load", () => {
+            const cform = document.getElementById('formConfirmacion');
+            const cbtn = document.getElementById('btnEnviarConfirmacion');
+            const cmodal = document.getElementById('modalConfirmacion');
+
+            const mform = document.getElementById('formCanciones');
+            const mbtn = document.getElementById('btnEnviarCanciones');
+            const mmodal = document.getElementById('modalCanciones');
+
+            cform.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                cbtn.disabled = true;
+                cbtn.classList.add('pointer-events-none', 'opacity-50');
+
+                const data = new FormData(cform);
+                const action = cform.action;
+
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                    mode: 'no-cors' // IMPORTANTE para Google Forms
+                })
+                .then(() => {
+                    cerrarModalConfirmacion();
+                    cform.reset();
+                })
+                .catch(() => {
+                    alert("Error al enviar. Intentá nuevamente.");
+
+                    btn.disabled = false;
+                    btn.classList.remove('pointer-events-none', 'opacity-50');
+                });
+            });
+
+            mform.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                mbtn.disabled = true;
+                mbtn.classList.add('pointer-events-none', 'opacity-50');
+
+                const data = new FormData(mform);
+                const action = mform.action;
+
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                    mode: 'no-cors' // IMPORTANTE para Google Forms
+                })
+                .then(() => {
+                    cerrarModalCanciones();
+                    mform.reset();
+                })
+                .catch(() => {
+                    alert("Error al enviar. Intentá nuevamente.");
+
+                    btn.disabled = false;
+                    btn.classList.remove('pointer-events-none', 'opacity-50');
+                });
+            });
+
+            function cerrarModalConfirmacion() {
+                cmodal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            function cerrarModalCanciones() {
+                mmodal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
         });
     </script>
 
