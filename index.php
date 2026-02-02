@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Website icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+
+    <link rel="icon" href="/favicon.ico"/>
+	    
+    <!-- Open Graph -->
+    <!-- <meta property="og:title" content="Mis 15 - Jazmin"/>
+	<meta property="og:description" content="Invitación a los XV años de Jazmin"/>
+	<meta property="og:image" content="assets/images/thumbnail.jpg"/> -->
+    
+    <!-- HTML Meta Tags -->
+    <title>Mis XV - Jazmin</title>
+    <meta name="description" content="Mis XV - Jazmin Perez - Invitacion, detalles, vestimenta, ubicación, confirmación de asistencia y sugerencia de canciones.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="http://www.jazminmisxv.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mis XV - Jazmin">
+    <meta property="og:description" content="Mis XV - Jazmin Perez - Invitacion, detalles, vestimenta, ubicación, confirmación de asistencia y sugerencia de canciones.">
+    <meta property="og:image" content="assets/images/thumbnail.png"><!-- Load error, please check URL -->
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="jazminmisxv.com">
+    <meta property="twitter:url" content="http://www.jazminmisxv.com/">
+    <meta name="twitter:title" content="Mis XV - Jazmin">
+    <meta name="twitter:description" content="Mis XV - Jazmin Perez - Invitacion, detalles, vestimenta, ubicación, confirmación de asistencia y sugerencia de canciones.">
+    <meta name="twitter:image" content="assets/images/thumbnail.png">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" />
+
+    <!-- Tailwind config file -->
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <!-- Application styles -->
+    <link rel="stylesheet" href="assets/css/app.css?v=<?php echo date('Ymdhis'); ?>">
+    <link rel="stylesheet" href="assets/css/animacion.css">
+    
+</head>
+<body>
+
+    <!-- SECCION PRINCIPAL - FOTO JAZMIN -->
+    <section class="relative 
+        bg-[url(assets/images/herosmall.png)]
+        md:bg-[url(assets/images/heroimg.png)]
+        bg-scroll md:bg-fixed
+        bg-cover bg-center bg-no-repeat herosection 
+        h-dvh">
+
+        <!-- <section class="relative overflow-hidden h-dvh herosection"> -->
+        
+        <div class="flex" style="height: 100%;">
+            <div class="flex-1 place-content-center">
+                <div class="text-right">
+                    <div class="titulo relative" data-animate="fade-right" data-duration="1500">Jazmín
+                        <div class="subtitulo" data-animate="fade-right" data-duration="2000">🞗 MIS XV AÑOS 🞗</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1"></div>
+        </div>
+
+        <div class="absolute bordado-derecho"></div>
+        <div class="absolute bordado-izquierdo"></div>
+
+        <!-- <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.3" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.2)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.1)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(128, 129, 117)" />
+                </g>
+            </svg>
+        </div>
+        <style>
+            .waves {
+                position: absolute;
+                width: 100vw;
+                height: 15vh;
+                bottom: 0;
+                min-height:100px;
+                max-height:150px;
+            }
+
+            .parallax > use {
+                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+            }
+                .parallax > use:nth-child(1) {
+                animation-delay: -2s;
+                animation-duration: 7s;
+            }
+            .parallax > use:nth-child(2) {
+                animation-delay: -3s;
+                animation-duration: 10s;
+            }
+            .parallax > use:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 13s;
+            }
+            .parallax > use:nth-child(4) {
+                animation-delay: -5s;
+                animation-duration: 20s;
+            }
+            @keyframes move-forever {
+                0% {
+                    transform: translate3d(-90px,0,0);
+                }
+                100% { 
+                    transform: translate3d(85px,0,0);
+                }
+            }
+            /*Shrinking for mobile*/
+            @media (max-width: 768px) {
+                .waves {
+                    height:40px;
+                    min-height:40px;
+                }
+                .content {
+                    height:30vh;
+                }
+                h1 {
+                    font-size:24px;
+                }
+            }
+        </style> -->
+
+    </section>
+
+    <!-- SECCION TARJETAS -->
+    <div class="relative bg-[url(assets/images/fondo_seccion1.png)] bg-cover bg-center bg-no-repeat">
+        
+        <div class="flex flex-col md:flex-row contenedor-seccion1 relative">
+            <!-- <div class="flex-1 place-content-center relative"> -->
+                <div class="card1">
+                    <img src="assets/images/card1.png" data-animate="zoom-in-right" data-duration="800">
+                    
+                    <img src="assets/images/card1flores.png" class="card1flores" 
+                        data-animate="zoom-in" data-duration="1500" data-delay="600">
+                </div>
+            <!-- </div>
+            <div class="flex-1 place-content-center relative" data-animate="zoom-in-left" data-duration="800"> -->
+                <img src="assets/images/card1back.png" class="card1back"
+                    data-animate="zoom-in-right" data-duration="2800">
+            <!-- </div> -->
+        </div>
+  
+    </div>
+
+    <!-- SECCION DATOS DE LA FIESTA -->
+    <section class="relative bg-[url(assets/images/fondo_seccion2.png)] bg-cover bg-center bg-no-repeat">
+        
+        <div class="flex h-fit place-content-center seccion2 relative">
+
+            <img src="assets/images/seccion2_floreado.png" class="fondoflores"
+                data-animate="fade-right" data-duration="2800">
+
+            <img src="assets/images/seccion2_fondoextra.png" class="fondoextra"
+                data-animate="fade-left" data-duration="700">
+
+            <img src="assets/images/seccion2_sobre.png" class="sobre"
+                data-animate="fade-down" data-duration="500">
+
+            <img src="assets/images/seccion2_disco.png" class="disco"
+                data-animate="fade-up-left" data-duration="1200">
+
+            <div class="bg-[url(assets/images/seccion2_vestimenta.png)] bg-contain bg-center bg-no-repeat vestimenta"
+                data-animate="fade-down-right" data-duration="1400">
+                <p class="titulo text-center">Vestimenta</p>
+                <p class="texto text-center px-8">ELEGANTE<br>NO MARRON</p>
+            </div>
+            
+            <div class="bg-[url(assets/images/seccion2_musica.png)] bg-cover bg-center bg-no-repeat musica"
+                data-animate="fade-down-right" data-duration="1300">
+                <p class="titulo text-center">Música</p>
+                <p class="texto text-center px-8">¿QUE TE GUSTARIA ESCUCHAR?</p>
+                <span id="openModalCanciones">
+                    <img src="assets/images/seccion2_boton_canciones.png" class="boton">
+                </span>
+            </div>
+
+            <div class="bg-[url(assets/images/seccion2_detalles.png)] bg-cover bg-center bg-no-repeat detalles"
+                data-animate="fade-left" data-duration="1000" data-rotate="-5deg">
+                <p class="titulo text-center">Detalles</p>
+                <p class="texto text-center px-8">20 DE MARZO<br>21:30 A 05:30 HS<br>JANOS ITUZAINGO I</p>
+                <a href="https://maps.app.goo.gl/AoMCJnjinCZJFrkQ6" target="_blank">
+                    <img src="assets/images/seccion2_boton_mapa.png" class="boton">
+                </a>
+            </div>
+
+        </div>
+    
+    </section>
+
+    <!-- SECCION VACIA - FOTO JAZMIN -->
+    <section class="relative bg-[url(assets/images/seccion3.png)] 
+        bg-scroll md:bg-fixed
+        bg-cover bg-center bg-no-repeat
+        min-h-screen h-dvh">
+    </section>
+
+
+    <!-- SECCION CONFIRMAR ASISTENCIA -->
+    <section class="relative h-fit bg-white bg-contain bg-bottom bg-no-repeat">
+
+        <div class="flex seccion4">
+            <div class="flex-1 place-content-center text-center w-screen">
+                <p class="titulo" data-animate="zoom-in" data-duration="2000">
+                    Ojalá puedas acompañarme
+                </p>
+
+                <p class="subtitulo">FALTAN:</p>
+
+                <div class="tiempo relative">
+                    <img src="assets/images/seccion4_contenedor.png" class="contenedor">
+
+                    <img src="assets/images/seccion4_ondas.png" class="ondas">
+
+                    <img src="assets/images/seccion4_sello.png" class="sello"
+                        data-animate="fade-left" data-duration="2500">
+
+                    <div class="valores flex place-content-center flip">
+                        <div class="valor counter">
+                            <span id="dias" class="counter-number">00</span>
+                        </div>
+                        <div class="valor counter">
+                            <span id="horas" class="counter-number">00</span>
+                        </div>
+                        <div class="valor counter">
+                            <span id="minutos" class="counter-number">00</span>
+                        </div>
+                        <div class="valor counter">
+                            <span id="segundos" class="counter-number">00</span>
+                        </div>
+                    </div>
+
+                    <div class="valores-detalle flex place-content-center">
+                        <div class="valor">DIAS</div>
+                        <div class="valor">HORAS</div>
+                        <div class="valor">MINUTOS</div>
+                        <div class="valor">SEGUNDOS</div>
+                    </div>
+
+                    <span id="openModalConfirmacion">
+                        <img src="assets/images/seccion4_boton.png" class="boton"
+                            data-animate="fade-right" data-duration="1000" data-rotate="-5deg" 
+                            data-scale="0.95" data-opacity="0.7">
+                    </span>
+
+                </div>
+
+            </div>
+            
+        </div>
+
+    </section>
+
+    <!-- PIE DE PAGINA - LOGO + BOSQUE -->
+    <div class="final relative">
+        <img src="assets/images/fondofooter.jpg" class="fondo">
+        <img src="assets/images/logojazmin.png" class="logo">
+    </div>
+
+    <!-- POPUP CONFIRMAR ASISTENCIA -->
+    <div id="modalConfirmacion" class="fixed inset-0 z-50 hidden items-center justify-center">
+
+        <div id="modalConfirmacionOverlay" class="absolute inset-0 bg-black/70"></div>
+
+        <div id="modalConfirmacionContent" class="relative z-10 w-full max-w-md mx-4 rounded-2xl p-6 transform 
+            transition-all duration-300 ease-out scale-100 opacity-100 estampilla">
+
+            <img src="assets/images/fondo_confirmar.png" class="absolute fondo_confirmar">
+            <!-- <img src="assets/images/header_confirmar.png" class="absolute header_confirmar"> -->
+
+            <button id="closeModalConfirmacion" class="absolute top-4 right-6 text-gray-400 hover:text-gray-700 text-xl">
+                ✕
+            </button>
+
+            <form class="space-y-6 m-4 text-center" id="formConfirmacion"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSei0_Jmuq0n4o6dKfuAg3l2la7ImT-3lODprOkpU26hFmPBqQ/formResponse"
+                method="POST">
+
+                <div>
+                    <label class="block mb-2">NOMBRE Y APELLIDO</label>
+                    <input type="text" name="entry.429864442" required
+                        class="w-full bg-transparent text-center border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div>
+                    <label class="block mb-2">¿ASISTIRAS AL EVENTO?</label>
+                    <div class="flex gap-4 place-content-center">
+                        <label class="flex items-center gap-2">
+                            <input type="radio" name="entry.384766204" value="Si" checked="true">SI
+                        </label>
+                        <label class="flex items-center gap-2 ">
+                            <input type="radio" name="entry.384766204" value="No">NO
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-2">¿TENES ALGUNA RESTRICCION ALIMENTARIA?</label>
+                    <input type="text" name="entry.1135856130" required
+                        class="w-full bg-transparent text-center border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Vegetariano, celíaco, alergia a...">
+                </div>
+
+                <button type="submit" id="btnEnviarConfirmacion" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
+                    <img src="assets/images/boton_enviar_confirmacion.png" alt="Confirmar" class="boton confirmar">
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- POPUP SUGERIR CANCIONES -->
+    <div id="modalCanciones" class="fixed inset-0 z-50 hidden items-center justify-center">
+
+        <div id="modalCancionesOverlay" class="absolute inset-0 bg-black/70"></div>
+
+        <div id="modalCancionesContent" class="relative z-10 w-full max-w-md mx-4 rounded-2xl p-6 transform 
+            transition-all duration-300 ease-out scale-100 opacity-100 estampilla">
+
+            <img src="assets/images/fondo_confirmar.png" class="absolute fondo_confirmar">
+
+            <button id="closeModalCanciones" class="absolute top-4 right-6 text-gray-400 hover:text-gray-700 text-xl">
+                ✕
+            </button>
+
+            <form class="space-y-6 m-4 text-center" id="formCanciones"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSdb0iDIsWtknwkkt1d1ZnZ1KitzD2cT7qkw5nyUk6r8G_xEYA/formResponse"
+                method="POST">
+
+                <input type="hidden" name="_redirect" value="index.html">
+
+                <div style="margin-top: 1.5rem;">
+                    <label class="block mb-1">CANCION 1</label>
+                    <input type="text" name="entry.363681474" required
+                        class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Nombre de la canción...">
+                </div>
+
+                <div>
+                    <label class="block mb-1">CANCION 2</label>
+                    <input type="text" name="entry.1255553650"
+                        class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Nombre de la canción...">
+                </div>
+
+                <div>
+                    <label class="block mb-1">CANCION 3</label>
+                    <input type="text" name="entry.641574439"
+                        class="w-full text-center bg-transparent border-b border-black/40 focus:border-black focus:outline-none"
+                        placeholder="Nombre de la canción...">
+                </div>
+
+                <button type="submit" id="btnEnviarCanciones" class="w-full flex justify-center mb-4" style="margin-top: 2rem;">
+                    <img src="assets/images/boton_enviar_canciones.png" alt="Confirmar" class="boton sugerir">
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/oberver.js"></script>
+    <script src="assets/js/popups.js"></script>
+    <script src="assets/js/contador.js"></script>
+
+</body>
+</html>
