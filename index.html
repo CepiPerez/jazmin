@@ -59,6 +59,7 @@
 </head>
 <body>
 
+    <!-- SECCION PRINCIPAL - FOTO JAZMIN -->
     <section class="relative 
         bg-[url(assets/images/herosmall.png)]
         md:bg-[url(assets/images/hero.png)]
@@ -66,9 +67,9 @@
         bg-cover bg-center bg-no-repeat herosection 
         min-h-screen h-dvh">
 
-    <!-- <section class="relative overflow-hidden h-dvh herosection"> -->
+        <!-- <section class="relative overflow-hidden h-dvh herosection"> -->
         
-        <div class="flex h-screen">
+        <div class="flex min-h-screen h-dvh">
             <div class="flex-1 place-content-center">
                 <div class="text-right">
                     <div class="titulo relative" data-animate="fade-right" data-duration="1500">Jazmín
@@ -150,7 +151,7 @@
 
     </section>
 
-
+    <!-- SECCION TARJETAS -->
     <div class="relative bg-[url(assets/images/fondo_seccion1.png)] bg-cover bg-center bg-no-repeat">
         
         <div class="flex flex-col md:flex-row contenedor-seccion1 relative">
@@ -170,6 +171,7 @@
   
     </div>
 
+    <!-- SECCION DATOS DE LA FIESTA -->
     <section class="relative bg-[url(assets/images/fondo_seccion2.png)] bg-cover bg-center bg-no-repeat">
         
         <div class="flex h-fit place-content-center seccion2 relative">
@@ -214,7 +216,7 @@
     
     </section>
 
-
+    <!-- SECCION VACIA - FOTO JAZMIN -->
     <section class="relative bg-[url(assets/images/seccion3.png)] 
         bg-scroll md:bg-fixed
         bg-cover bg-center bg-no-repeat
@@ -222,6 +224,7 @@
     </section>
 
 
+    <!-- SECCION CONFIRMAR ASISTENCIA -->
     <section class="relative h-fit bg-white bg-contain bg-bottom bg-no-repeat">
 
         <div class="flex seccion4">
@@ -276,12 +279,14 @@
 
     </section>
 
+    <!-- PIE DE PAGINA - LOGO + BOSQUE -->
     <div class="final relative">
         <img src="assets/images/seccion4.png" class="fondo">
         <img src="assets/images/logo.png" class="logo">
     </div>
 
 
+    <!-- POPUP CONFIRMAR ASISTENCIA -->
     <div id="modalConfirmacion" class="fixed inset-0 z-50 hidden items-center justify-center">
 
         <div id="modalConfirmacionOverlay" class="absolute inset-0 bg-black/70"></div>
@@ -334,7 +339,7 @@
         </div>
     </div>
 
-
+    <!-- POPUP SUGERIR CANCIONES -->
     <div id="modalCanciones" class="fixed inset-0 z-50 hidden items-center justify-center">
 
         <div id="modalCancionesOverlay" class="absolute inset-0 bg-black/70"></div>
@@ -383,229 +388,9 @@
         </div>
     </div>
 
-
-
     <script src="assets/js/oberver.js"></script>
-
-    <script> 
-        const fechaObjetivo = new Date(2026, 2, 20, 21, 30, 0).getTime();
-
-        const contenedor_dia = document.getElementById('dias');
-        const contenedor_hor = document.getElementById('horas');
-        const contenedor_min = document.getElementById('minutos');
-        const contenedor_seg = document.getElementById('segundos');
-
-
-        function actualizarCounter(contenedor, nuevoValor) {
-            const actual = contenedor.querySelector('.counter-number');
-
-            const items = contenedor.children;
-
-            while (items.length > 1) {
-                items.firstElementChild?.remove()
-            }
-
-            if (actual && (actual.innerHTML == nuevoValor)) return;
-            
-            const nuevo = document.createElement('span');
-            nuevo.className = 'counter-number enter';
-            nuevo.innerHTML = nuevoValor;
-
-            contenedor.appendChild(nuevo);
-
-            if (actual) {
-                actual.classList.add('exit');
-                actual.classList.remove('enter');
-                actual.addEventListener('animationend', () => actual.remove(), { once: true });
-            }
-        }
-
-        function actualizarCountdown() {
-            const ahora = new Date().getTime();
-            const diferencia = fechaObjetivo - ahora;
-
-            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-            const hh = String(horas).padStart(2, '0');
-            const mm = String(minutos).padStart(2, '0');
-            const ss = String(segundos).padStart(2, '0');
-
-            contenedor_dia.innerHTML = dias;
-            contenedor_hor.innerHTML = hh;
-            contenedor_min.innerHTML = mm;
-            contenedor_seg.innerHTML = ss;
-            //actualizarCounter(contenedor_dia, dias);
-            //actualizarCounter(contenedor_hor, hh);
-            //actualizarCounter(contenedor_min, mm);
-            //actualizarCounter(contenedor_seg, ss);
-
-            if (diferencia < 0) {
-                clearInterval(intervalo);
-                console.log("¡Tiempo finalizado!");
-            }
-        }
-
-        actualizarCountdown();
-
-        const intervalo = setInterval(actualizarCountdown, 1000);
-
-    </script>
-
-    <script>
-        const openBtnConfirmacion = document.getElementById('openModalConfirmacion');
-        const modalConfirmacion = document.getElementById('modalConfirmacion');
-        const modalContentConfirmacion = document.getElementById('modalConfirmacionContent');
-        const closeBtnConfirmacion = document.getElementById('closeModalConfirmacion');
-        const overlayConfirmacion = document.getElementById('modalConfirmacionOverlay');
-
-        function openModalConfirmacion() {
-            modalConfirmacion.classList.remove('hidden');
-            modalConfirmacion.classList.add('flex');
-
-            requestAnimationFrame(() => {
-                modalContentConfirmacion.classList.remove('scale-95', 'opacity-0');
-                modalContentConfirmacion.classList.add('scale-100', 'opacity-100');
-            });
-        }
-
-        function closeModalConfirmacion() {
-            modalContentConfirmacion.classList.add('scale-95', 'opacity-0');
-            modalContentConfirmacion.classList.remove('scale-100', 'opacity-100');
-
-            setTimeout(() => {
-                modalConfirmacion.classList.add('hidden');
-                modalConfirmacion.classList.remove('flex');
-            }, 300);
-        }
-
-        openBtnConfirmacion.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModalConfirmacion();
-        });
-
-        closeBtnConfirmacion.addEventListener('click', closeModalConfirmacion);
-        overlayConfirmacion.addEventListener('click', closeModalConfirmacion);
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModalConfirmacion();
-        });
-
-
-        const openBtnCanciones = document.getElementById('openModalCanciones');
-        const modalCanciones = document.getElementById('modalCanciones');
-        const modalContentCanciones = document.getElementById('modalCancionesContent');
-        const closeBtnCanciones = document.getElementById('closeModalCanciones');
-        const overlayCanciones = document.getElementById('modalCancionesOverlay');
-
-        function openModalCanciones() {
-            modalCanciones.classList.remove('hidden');
-            modalCanciones.classList.add('flex');
-
-            requestAnimationFrame(() => {
-                modalContentCanciones.classList.remove('scale-95', 'opacity-0');
-                modalContentCanciones.classList.add('scale-100', 'opacity-100');
-            });
-        }
-
-        function closeModalCanciones() {
-            modalContentCanciones.classList.add('scale-95', 'opacity-0');
-            modalContentCanciones.classList.remove('scale-100', 'opacity-100');
-
-            setTimeout(() => {
-                modalCanciones.classList.add('hidden');
-                modalCanciones.classList.remove('flex');
-            }, 300);
-        }
-
-        openBtnCanciones.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModalCanciones();
-        });
-
-        closeBtnCanciones.addEventListener('click', closeModalCanciones);
-        overlayCanciones.addEventListener('click', closeModalCanciones);
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModalCanciones();
-        });
-    </script>
-
-    <script>
-        window.addEventListener("load", () => {
-            const cform = document.getElementById('formConfirmacion');
-            const cbtn = document.getElementById('btnEnviarConfirmacion');
-            const cmodal = document.getElementById('modalConfirmacion');
-
-            const mform = document.getElementById('formCanciones');
-            const mbtn = document.getElementById('btnEnviarCanciones');
-            const mmodal = document.getElementById('modalCanciones');
-
-            cform.addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                cbtn.disabled = true;
-                cbtn.classList.add('pointer-events-none', 'opacity-50');
-
-                const data = new FormData(cform);
-                const action = cform.action;
-
-                fetch(action, {
-                    method: 'POST',
-                    body: data,
-                    mode: 'no-cors' // IMPORTANTE para Google Forms
-                })
-                .then(() => {
-                    cerrarModalConfirmacion();
-                    cform.reset();
-                })
-                .catch(() => {
-                    alert("Error al enviar. Intentá nuevamente.");
-
-                    btn.disabled = false;
-                    btn.classList.remove('pointer-events-none', 'opacity-50');
-                });
-            });
-
-            mform.addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                mbtn.disabled = true;
-                mbtn.classList.add('pointer-events-none', 'opacity-50');
-
-                const data = new FormData(mform);
-                const action = mform.action;
-
-                fetch(action, {
-                    method: 'POST',
-                    body: data,
-                    mode: 'no-cors' // IMPORTANTE para Google Forms
-                })
-                .then(() => {
-                    cerrarModalCanciones();
-                    mform.reset();
-                })
-                .catch(() => {
-                    alert("Error al enviar. Intentá nuevamente.");
-
-                    btn.disabled = false;
-                    btn.classList.remove('pointer-events-none', 'opacity-50');
-                });
-            });
-
-            function cerrarModalConfirmacion() {
-                cmodal.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-            }
-
-            function cerrarModalCanciones() {
-                mmodal.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-            }
-        });
-    </script>
+    <script src="assets/js/popups.js"></script>
+    <script src="assets/js/contador.js"></script>
 
 
 </body>
